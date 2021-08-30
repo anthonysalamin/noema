@@ -3,7 +3,7 @@
  * Build: 30.08.2021 17:48 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("RAT");
+    console.log("RAT noema");
     // globals
     const log = console.log,
       forms = new Set(document.getElementsByClassName("form-wrapper-rsrv")),
