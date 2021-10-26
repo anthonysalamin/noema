@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 26.10.2021 19:25 |anthonysalamin.ch
+ * build: 26.10.2021 19:25 | anthonysalamin.ch
  */
 console.log("loaded date picker V.12");
 document.addEventListener("DOMContentLoaded", () => {
