@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 26.10.2021 19:25 | anthonysalamin.ch
+ * build: 26.10.2021 19:39 | anthonysalamin.ch
  */
 console.log("loaded date picker V.12");
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,8 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
-            // disable calendar input
-            calendar.disabled = true;
+            // change placeholder and skip date picker instance
             calendar.placeholder = "Season has ended.";
           } else {
             // show calendar
