@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btnReserve.textContent = "RESERVE";
       btnReserve.style.backgroundColor = "transparent";
     } else {
-      log("Oops, something went wrong with btn reserv handling");
+      log("Oops, something went wrong with the button reserve handling");
     } // end if
   }); // end click listener
 }); // end DOM loaded
