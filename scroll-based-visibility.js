@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // logic
     isAboveTrigger = (() => {
       if (scrollBarPosition > triggerPosition - viewportHeight / 2) {
-        log("logo should be invisible");
+        // log("logo should be invisible");
         // feedback.textContent = "is bellow trigger top position";
         return false;
       } else {
