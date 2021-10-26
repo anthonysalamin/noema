@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
       } // end if
     })(); // end device variable
-    log(width);
-    log(desktopDevice);
+    // checks
+    // log(width);
+    // log(desktopDevice);
   } // end deviceSize()
   // ideally should run the function on window resize event with debounce function
   deviceSize();
