@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }); // end listener
   } else {
     log(
-      `Yay, 🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
+      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
     );
   } // end if
 }); // end DOMloaded
