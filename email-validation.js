@@ -2,8 +2,8 @@
  * 🟢 NOEMA | email validation V.2
  * Build: 30.08.2021 17:48 | anthonysalamin.ch
  */
+console.log("loaded email validation V.2");
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("RAT noema");
     // globals
     const log = console.log,
       forms = new Set(document.getElementsByClassName("form-wrapper-rsrv")),
@@ -95,4 +95,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }); // end for each form
     } // end emailCheck()
   });
-  
