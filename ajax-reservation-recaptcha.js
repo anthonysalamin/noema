@@ -1,7 +1,6 @@
-console.clear();
 /*
  * 🔴 NOEMA | AJAX reservation + invisible recaptcha (V2) V.07
- * build: 26.10.2021 21:21 | anthonysalamin.ch
+ * build: 26.10.2021 21:58 | anthonysalamin.ch
  */
 console.log("loaded AJAX + invisible recaptcha (V2) V.07");
 const log = console.log,
