@@ -1,8 +1,8 @@
 /*
- * 🟢 NOEMA | cookies announcement V.01
+ * 🟢 NOEMA | cookie announcement V.01
  * build: 30.04.2021 08:07 | anthonysalamin.ch
  */
-console.log("loaded cookies announcement V.01");
+console.log("loaded cookie announcement V.01");
 document.addEventListener("DOMContentLoaded", () => {
   // options
   const cookieName = "NOEMA_Cookie_Announcement",
