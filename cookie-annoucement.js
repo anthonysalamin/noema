@@ -1,39 +1,36 @@
 /*
- * 🟢 NOEMA | cookie agreement V.01
- * TO DO:
- * 1) ditch jQuery, rebuild animation in vanilla javaScript
- * 2) Rebuild with proper layout in Webflow
- * build: 02.03.2021 17:43 | anthonysalamin.ch
+ * 🟢 NOEMA | cookies announcement V.01
+ * build: 30.04.2021 08:07 | anthonysalamin.ch
  */
-console.log("loaded cookie agreement V.01");
+console.log("loaded cookies announcement V.01");
 document.addEventListener("DOMContentLoaded", () => {
   // options
-  const cookieName = "NOEMA_Cookie_Agreement",
-    cookieValue = "Accepted",
+  const cookieName = "NOEMA_Cookie_Announcement",
+    cookieValue = "Announced",
     // cookieDomain = "scorpiosmykonos.com",
     popupDelay = 1, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
     speed = 500;
 
   const log = console.log,
-    gdprWrapper = document.getElementById("cookie-wrapper"),
-    popupButton = document.getElementById("cookie-accept");
+    cookieWrapper = document.getElementById("cookie-wrapper-announcement"),
+    popupButton = document.getElementById("cookie-accept-announcement");
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no GDPR 🍪 was found");
+    log("no announcement 🍪 was found");
     // display popup after x amount of seconds
     setTimeout(() => {
-      gdprWrapper.style.display = "flex";
-      $(gdprWrapper).fadeTo(speed, 1, "linear");
-      log("GDPR 🍪 popup displayed");
+      cookieWrapper.style.display = "flex";
+      $(cookieWrapper).fadeTo(speed, 1, "linear");
+      log("announcement 🍪 popup displayed");
     }, popupDelay * 1500);
 
     // close popup on click
     popupButton.addEventListener("click", () => {
-      $(gdprWrapper).fadeTo(speed, 0, "linear");
+      $(cookieWrapper).fadeTo(speed, 0, "linear");
       setTimeout(function () {
-        gdprWrapper.style.display = "none";
+        cookieWrapper.style.display = "none";
       }, speed);
     });
 
@@ -44,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🧠 create cookie on button click to expire on newly defined date
 
     popupButton.addEventListener("click", () => {
-      log("GDPR 🍪 created and stored");
+      log("announcement 🍪 created and stored");
       Cookies.set(cookieName, cookieValue, {
         expires: date
         // domain: cookieDomain // ⚠️ activate domain for production
