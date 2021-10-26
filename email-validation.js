@@ -1,6 +1,6 @@
 /*
  * 🟢 NOEMA | email validation V.2
- * Build: 30.08.2021 17:48 | anthonysalamin.ch
+ * build: 30.08.2021 17:48 | anthonysalamin.ch
  */
 console.log("loaded email validation V.2");
 document.addEventListener("DOMContentLoaded", () => {
