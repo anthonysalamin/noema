@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollBarPosition = Math.ceil(scrollBar.scrollTop);
 
     // debug
-    log(`trigger position: ${triggerPosition}px`);
+    // log(`trigger position: ${triggerPosition}px`);
     // feedbackTriggerPosition.textContent = `trigger position: ${triggerPosition}px`;
-    log(`scrollbar position: ${scrollBarPosition}px`);
+    // log(`scrollbar position: ${scrollBarPosition}px`);
     // feedbackScrollBarPosition.textContent = `scrollbar position: ${scrollBarPosition}px`;
 
     // logic
