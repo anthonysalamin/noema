@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // logic
   btnReserve.addEventListener("click", () => {
     textContent = btnReserve.textContent;
-    log(textContent);
+    // log(textContent);
     if (textContent == "RESERVE") {
       btnReserve.textContent = "CLOSE";
       btnReserve.style.backgroundColor = desktopDevice

@@ -1,8 +1,7 @@
 console.clear();
 /*
  * 🟠 NOEMA | AJAX reservation + invisible recaptcha (V2) V.07
- * TO DO: month injection for orestis
- * build: 19.04.2021 11:00 | anthonysalamin.ch
+ * build: 26.10.2021 21:21 | anthonysalamin.ch
  */
 console.log("loaded AJAX + invisible recaptcha (V2) V.07");
 const log = console.log,
@@ -109,9 +108,15 @@ function validate(event) {
   // globals
   const log = console.log,
     form = document.getElementById("noema-reservation"),
-    alertWrapper = document.getElementById("wrapper-alert-message"),
-    alertWrap = document.getElementById("wrap-alert-message"),
+    alertWrapper = document.querySelector("#error-container-message"),
+    alertWrap = alertWrapper.querySelector("#error-wrapper-message"),
+    alertSpan = alertWrap.querySelector("#error-text-message"),
     speed = 250;
+
+  // checks
+  log(
+    `container: ${alertWrapper.id} wrapper: ${alertWrap.id} text: ${alertSpan.id}`
+  );
 
   const inputs = new Set(form.getElementsByTagName("input")),
     submit = form.querySelector("#submit");
@@ -168,9 +173,7 @@ function validate(event) {
         plural = emptyInputs.length > 1 ? "s" : "";
 
       // inject warning message
-      alertWrapper.querySelector(
-        "#alert-span"
-      ).textContent = `Almost there. Please fill in the required field${plural}: ${message}`;
+      alertSpan.textContent = `Almost there. Please fill in the required field${plural}: ${message}`;
 
       // animations
       alertWrapper.style.opacity = "0";
@@ -192,7 +195,9 @@ function validate(event) {
       // inject warning placeholders
       emptyInputs.forEach((input) => {
         log(`${input.name} input is missing`);
-        submitFeedback.textContent = "Make sure to fill in all fields.";
+        setTimeout(function () {
+          submitFeedback.textContent = "Make sure to fill in all fields.";
+        }, 500);
 
         // utility function to capitalize first letter of a string
         const capitalizeFirstLetter = ([first, ...rest], locale = "en") =>
@@ -256,6 +261,7 @@ function ajaxMe() {
   // 😡 on error
   function error(err) {
     alert(`Oops, something went wrong: ${err}`);
+    log(`Oops, something went wrong: ${err}`);
     submitFeedback.textContent = `Oops, something went wrong: ${err}`;
   } // end error()
 
