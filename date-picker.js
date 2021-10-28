@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 28.10.2021 22:13 | anthonysalamin.ch
+ * build: 28.10.2021 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -128,21 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
   datePickerInit();
 
   // last sync
-  const berlin = new Date();
-  function addZeroBefore(n) {
-    return (n < 10 ? "0" : "") + n;
-  }
-  function lastSync(day, month, year, hour, minute) {
-    log(
-      `loaded: date-picker V.${version} | Last sync: ${day}.${month}.${year} @ ${hour}:${minute}`
-    );
-  }
-  lastSync(
-    addZeroBefore(berlin.getUTCDate()),
-    addZeroBefore(berlin.getUTCMonth() + 1),
-    berlin.getUTCFullYear(),
-    addZeroBefore(berlin.getUTCHours() + 2),
-    addZeroBefore(berlin.getUTCMinutes())
-  );
-  // end last sync
+  log(`loaded: date-picker V.${version} | build: 28.10.2021 23:13`);
 }); // end DOM listener
