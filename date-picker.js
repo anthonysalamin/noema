@@ -129,17 +129,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // last sync
   const berlin = new Date();
+  function addZeroBefore(n) {
+    return (n < 10 ? "0" : "") + n;
+  }
   function lastSync(day, month, year, hour, minute) {
     log(
       `loaded: date-picker V.${version} | Last sync: ${day}.${month}.${year} @ ${hour}:${minute}`
     );
   }
   lastSync(
-    berlin.getUTCDate(),
-    berlin.getUTCMonth() + 1,
+    addZeroBefore(berlin.getUTCDate()),
+    addZeroBefore(berlin.getUTCMonth() + 1),
     berlin.getUTCFullYear(),
-    berlin.getUTCHours() + 2,
-    berlin.getUTCMinutes()
+    addZeroBefore(berlin.getUTCHours() + 2),
+    addZeroBefore(berlin.getUTCMinutes())
   );
   // end last sync
 }); // end DOM listener
