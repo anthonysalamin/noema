@@ -73,21 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
-            // change placeholder, update disable css and skip date picker instance
-            const cssInputDisabled = `
+            // define input disabled css
+            const inputDisabled = `
               input:disabled {
                 color: red !important;
                 background-color: transparent !important;
                 border: none !important;
               }
-              `,
-              head = document.head || document.getElementsByTagName("head")[0],
-              style = document.createElement("style");
+              `;
 
-            style.type = "text/css";
-            style.appendChild(document.createTextNode(cssInputDisabled));
-            head.appendChild(style);
+            // inject custom css
+            function injectStyle(css) {
+              const head =
+                  document.head || document.getElementsByTagName("head")[0],
+                style = document.createElement("style");
+              style.type = "text/css";
+              style.appendChild(document.createTextNode(css));
+              head.appendChild(style);
+            }
+            injectStyle(inputDisabled);
 
+            // update placeholder and disable input
             calendar.placeholder = "Season has ended.";
             calendar.disabled = true;
           } else {
