@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 28.10.2021 15:15 | anthonysalamin.ch
+ * build: 28.10.2021 21:58 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       calendarSystem: "gregorian"
     };
 
-  // inits
-  datePickerInit();
-
   // 🍋 date picker management
   function datePickerInit() {
     Array.from(forms).forEach((form) => {
@@ -74,15 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
             // define input disabled css
-            const inputDisabled = `
+            const inputDisabledStyle = `
               input:disabled {
-                color: red !important;
                 background-color: transparent !important;
                 border: none !important;
               }
               `;
 
-            // inject custom css
+            // inject custom css definition
             function injectStyle(css) {
               const head =
                   document.head || document.getElementsByTagName("head")[0],
@@ -91,7 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
               style.appendChild(document.createTextNode(css));
               head.appendChild(style);
             }
-            injectStyle(inputDisabled);
+            // inject custom css expression
+            injectStyle(inputDisabledStyle);
 
             // update placeholder and disable input
             calendar.placeholder = "Season has ended.";
@@ -124,5 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ); // end listener
     }); // end for each form
   } // end datePickerInit()
+
+  // init date picker
+  datePickerInit();
+  
+  // logging script
   log(`loaded: date picker V.12 | last cached: ${new Date()}`);
 }); // end DOM listener
