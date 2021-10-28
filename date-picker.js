@@ -75,7 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const inputDisabledStyle = `
               input:disabled {
                 background-color: transparent !important;
-                border: none !important;
+                border-top: none !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-bottom: 1px solid black !important;
+              }
+              input::placeholder {
+                color: red;
+                opacity: 1; /* Firefox */
               }
               `;
 
