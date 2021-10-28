@@ -4,12 +4,14 @@
  * build: 28.10.2021 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
-  // globals
-  const log = console.log,
-    version = 12, // script version
+  // options
+  const scriptVersion = 12,
     seasonStart = { day: 21, month: 5, year: 2021 },
     seasonEnd = { day: 10, month: 10, year: 2021 },
-    seasonHasAnEnd = true,
+    seasonHasAnEnd = true;
+  
+  // globals
+  const log = console.log,
     forms = document.getElementsByClassName("form-wrapper-rsrv"),
     monthIds = [
       "January",
@@ -135,5 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
   datePickerInit();
 
   // last sync
-  log(`loaded: date-picker V.${version} | build: 28.10.2021 23:13`);
+  log(`loaded: date-picker V.${scriptVersion} | build: 28.10.2021 23:13`);
 }); // end DOM listener
