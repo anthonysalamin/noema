@@ -6,10 +6,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // options
   const scriptVersion = 12,
-    seasonStart = { day: 21, month: 5, year: 2021 },
-    seasonEnd = { day: 10, month: 10, year: 2021 },
+    seasonStart = { day: 21, month: 5, year: new Date().getFullYear() },
+    seasonEnd = { day: 10, month: 10, year: new Date().getFullYear() },
     seasonHasAnEnd = true;
-  
+
   // globals
   const log = console.log,
     forms = document.getElementsByClassName("form-wrapper-rsrv"),
