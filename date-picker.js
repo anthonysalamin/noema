@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 28.10.2021 21:58 | anthonysalamin.ch
+ * build: 28.10.2021 22:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // update placeholder and disable input
             calendar.placeholder = "Season has ended.";
             calendar.disabled = true;
+            calendar.style.cursor = "not-allowed";
           } else {
             // show calendar
             instance.show();
