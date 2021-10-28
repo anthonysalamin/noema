@@ -1,9 +1,8 @@
 /*
  * 🟡 NOEMA | date picker V.12
  * dependencies: mobiscroll.js + moment.js
- * build: 26.10.2021 19:39 | anthonysalamin.ch
+ * build: 28.10.2021 15:15 | anthonysalamin.ch
  */
-console.log("loaded date picker V.12");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
@@ -74,8 +73,23 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         () => {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
-            // change placeholder and skip date picker instance
+            // change placeholder, update disable css and skip date picker instance
+            const cssInputDisabled = `
+              input:disabled {
+                color: red !important;
+                background-color: transparent !important;
+                border: none !important;
+              }
+              `,
+              head = document.head || document.getElementsByTagName("head")[0],
+              style = document.createElement("style");
+
+            style.type = "text/css";
+            style.appendChild(document.createTextNode(cssInputDisabled));
+            head.appendChild(style);
+
             calendar.placeholder = "Season has ended.";
+            calendar.disabled = true;
           } else {
             // show calendar
             instance.show();
@@ -104,4 +118,5 @@ document.addEventListener("DOMContentLoaded", () => {
       ); // end listener
     }); // end for each form
   } // end datePickerInit()
+  log(`loaded: date picker V.12 | last cached: ${new Date()}`);
 }); // end DOM listener
