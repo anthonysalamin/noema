@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const scriptVersion = 12,
     seasonStart = { day: 21, month: 5, year: new Date().getFullYear() },
     seasonEnd = { day: 10, month: 10, year: new Date().getFullYear() },
-    seasonHasAnEnd = true;
+    daysLimit = 30,
+    seasonHasAnEnd = false;
 
   // globals
   const log = console.log,
@@ -28,16 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "December"
     ];
 
-  let date = new Date(),
+  const date = new Date(),
     today = new Date(date.setDate(date.getDate())),
-    min = new Date(
+    future = new Date(date.setDate(date.getDate() + daysLimit)); // x days in the future
+      
+   const min = new Date(
       date.setUTCFullYear(
         seasonStart.year,
         seasonStart.month - 1,
         seasonStart.day
       )
-    ),
-    max = new Date(
+    );
+      
+  const max = new Date(
       date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day)
     );
 
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // if today's date is more recent than the season's start...
       // ... then use today's date as min value for each day until the season ends
       min: Date.parse(today) > Date.parse(min) ? today : min,
-      max: max,
+      max: seasonHasAnEnd ? max : future,
       dateFormat: "dd/mm/yyyy",
       display: "center",
       layout: "layout",
@@ -107,25 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             // show calendar
             instance.show();
-            /*
-            // disable SET button if season has ended
-            function disableSETbutton() {
-              const button = document.querySelector(
-                ".mbsc-fr-btn1.mbsc-fr-btn-e.mbsc-fr-btn"
-              );
-              button.style.pointerEvents = "none";
-              button.textContent = "END";
-              log(button);
-            } // end disableSETbutton()
-
-            setTimeout(() => {
-              log(`today: ${Date.parse(today)} seasonend: ${Date.parse(max)}`);
-              Date.parse(today) > Date.parse(max) && seasonHasAnEnd
-                ? disableSETbutton()
-                : log("season not over yet");
-            }, 150);
-            // end disable SET BUTTON
-            */
           } // end if
         },
         false
