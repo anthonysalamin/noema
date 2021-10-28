@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     seasonStart = { day: 21, month: 5, year: new Date().getFullYear() },
     seasonEnd = { day: 10, month: 10, year: new Date().getFullYear() },
     daysLimit = 30,
-    seasonHasAnEnd = false;
+    seasonHasAnEnd = true;
 
   // globals
   const log = console.log,
