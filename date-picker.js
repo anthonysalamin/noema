@@ -6,6 +6,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
+    version = 12, // script version
     seasonStart = { day: 21, month: 5, year: 2021 },
     seasonEnd = { day: 10, month: 10, year: 2021 },
     seasonHasAnEnd = true,
@@ -125,7 +126,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // init date picker
   datePickerInit();
-  
-  // logging script
-  log(`loaded: date picker V.12 | last cached: ${new Date()}`);
+
+  // last sync
+  const berlin = new Date();
+  function lastSync(day, month, year, hour, minute) {
+    log(
+      `loaded: date-picker V.${version} | Last sync: ${day}.${month}.${year} @ ${hour}:${minute}`
+    );
+  }
+  lastSync(
+    berlin.getUTCDate(),
+    berlin.getUTCMonth() + 1,
+    berlin.getUTCFullYear(),
+    berlin.getUTCHours() + 2,
+    berlin.getUTCMinutes()
+  );
+  // end last sync
 }); // end DOM listener
