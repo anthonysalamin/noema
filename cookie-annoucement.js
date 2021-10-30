@@ -1,9 +1,17 @@
 /*
- * 🟢 NOEMA | cookie announcement V.01
- * build: 30.04.2021 08:07 | anthonysalamin.ch
+ * 🟢 NOEMA | cookie announcement
+ * V.01 | 30.04.2021 @ 08:07 | anthonysalamin.ch
  */
-console.log("loaded cookie announcement V.01");
 document.addEventListener("DOMContentLoaded", () => {
+  cookieAnnouncement();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.01 | 30.04.2021 @ 08:07 | cookie announcement`
+  ); // end logging
+}); // end DOM listener
+
+function cookieAnnouncement() {
   // options
   const cookieName = "NOEMA_Cookie_Announcement",
     cookieValue = "Announced",
@@ -18,12 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no announcement 🍪 was found");
+    console.log(`%c warning:`, `color: orange`, `no announcement 🍪 was found`); // end logging
     // display popup after x amount of seconds
     setTimeout(() => {
       cookieWrapper.style.display = "flex";
       $(cookieWrapper).fadeTo(speed, 1, "linear");
-      log("announcement 🍪 popup displayed");
+      console.log(
+        `%c success:`,
+        `color: green`,
+        `announcement 🍪 popup displayed`
+      ); // end logging
     }, popupDelay * 1500);
 
     // close popup on click
@@ -41,15 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🧠 create cookie on button click to expire on newly defined date
 
     popupButton.addEventListener("click", () => {
-      log("announcement 🍪 created and stored");
+      console.log(
+        `%c success:`,
+        `color: green`,
+        `announcement 🍪 created and stored`
+      ); // end logging
       Cookies.set(cookieName, cookieValue, {
         expires: date
         // domain: cookieDomain // ⚠️ activate domain for production
       }); // end set cookie
     }); // end listener
   } else {
-    log(
-      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
-    );
+    console.log(
+      `%c success:`,
+      `color: green`,
+      `${cookieName} 🍪 is "${cookieValue}", popup remains hidden`
+    ); // end logging
   } // end if
-}); // end DOMloaded
+} // end cookieAnnouncement()

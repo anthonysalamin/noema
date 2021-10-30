@@ -1,10 +1,18 @@
 /*
- * 🟢 NOEMA | button reserve handling V.01
+ * 🟢 NOEMA | button reserve handling
  * Behaviour: on click change text content + bg color based on device's width
- * build: 15.03.2021 11:08 | anthonysalamin.ch
+ * V.01 | 15.03.2021 @ 11:08 | anthonysalamin.ch
  */
-console.log("loaded button reserve handling V.01");
 document.addEventListener("DOMContentLoaded", () => {
+  buttonHandling();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.01 | 15.03.2021 @ 11:08 | button reserve handling`
+  ); // end logging
+}); // end DOM listener
+
+function buttonHandling() {
   // globals
   const log = console.log,
     btnReserve = document.getElementById("btn-reserve"),
@@ -46,4 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
       log("Oops, something went wrong with the button reserve handling");
     } // end if
   }); // end click listener
-}); // end DOM loaded
+} // end buttonHandling()

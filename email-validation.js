@@ -1,9 +1,17 @@
 /*
- * 🟢 NOEMA | email validation V.2
- * build: 30.08.2021 17:48 | anthonysalamin.ch
+ * 🟢 NOEMA | email validation
+ * V.2 | 30.08.2021 @ 17:48 | anthonysalamin.ch
  */
-console.log("loaded email validation V.2");
 document.addEventListener("DOMContentLoaded", () => {
+  emailValidation();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.2 | 30.08.2021 @ 17:48 | email validation`
+  ); // end logging
+}); // end DOM listener
+
+function emailValidation() {
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-wrapper-rsrv")),
@@ -11,9 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     colorInvalid = "#DB322D",
     speed = 300;
   let value, arobase, extension, message;
-
-  // inits
-  emailCheck();
 
   // 🍉 debounce function definition
   function debounce(func, wait) {
@@ -74,18 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
             if (arobase) {
               if (extension) {
                 checkInput.style.color = colorValid;
+                console.log(`%c success:`, `color: green`, `seems legit`); // end logging
                 return ""; // "seems legit"
               } else {
                 checkInput.style.color = colorInvalid;
-                return "Not yet valid.";
+                console.log(`%c warning:`, `color: orange`, `not yet valid`); // end logging
+                return "not yet valid";
               } // end if extension
             } else {
               checkInput.style.color = colorInvalid;
-              return 'Seems "@" is missing.';
+              console.log(
+                `%c warning:`,
+                `color: orange`,
+                `seems "@" is missing`
+              ); // end logging
+              return 'seems "@" is missing';
             } // end if arobase
           } else {
             checkInput.style.color = colorInvalid;
-            return "A valid email is needed.";
+            console.log(`%c error:`, `color: red`, `valid email needed`); // end logging
+            return "valid email needed";
           } // end if value > 1
         })();
 
@@ -94,4 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.addEventListener("keyup", debounce(emailValidation, speed));
     }); // end for each form
   } // end emailCheck()
-});
+
+  // inits
+  emailCheck();
+} // end emailValidation()

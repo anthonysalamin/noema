@@ -1,8 +1,16 @@
 /*
- * 🟡 NOEMA | AJAX reservation + invisible recaptcha (V2) V.07
- * build: 26.10.2021 21:58 | anthonysalamin.ch
+ * 🟡 NOEMA | AJAX reservation + invisible recaptcha (V2)
+ * V.07 | 26.10.2021 @ 21:58 | anthonysalamin.ch
  */
-console.log("loaded AJAX + invisible recaptcha (V2) V.07");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.07 | 26.10.2021 @ 21:58 | AJAX reservation + invisible recaptcha (V2)`
+  ); // end logging
+}); // end DOM listener
+
+
 const log = console.log,
   submitFeedback = document.getElementById("submit-feedback"),
   submitBtn = document.getElementById("submit");
@@ -22,7 +30,7 @@ function onSubmit(token) {
     }
     */
     if (grecaptcha === undefined) {
-      log("oops, recaptcha non defined");
+      log("oops, recaptcha not defined");
       reject();
     }
 
@@ -111,11 +119,6 @@ function validate(event) {
     alertWrap = alertWrapper.querySelector("#error-wrapper-message"),
     alertSpan = alertWrap.querySelector("#error-text-message"),
     speed = 250;
-
-  // checks
-  log(
-    `container: ${alertWrapper.id} wrapper: ${alertWrap.id} text: ${alertSpan.id}`
-  );
 
   const inputs = new Set(form.getElementsByTagName("input")),
     submit = form.querySelector("#submit");
@@ -207,11 +210,11 @@ function validate(event) {
       });
     } // end of if statement
   })(); // end checkMePlease()
-} // end validate(event)
+} // end validate()
 
 function onload() {
   submitBtn.onclick = validate;
-  log("onload says: listening to submit event");
+  // log("onload says: listening to submit event");
 } // end onload()
 onload();
 

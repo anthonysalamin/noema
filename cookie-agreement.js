@@ -1,15 +1,23 @@
 /*
- * 🟢 NOEMA | cookie agreement V.01
+ * 🟢 NOEMA | cookie agreement
  * TO DO:
  * 1) ditch jQuery, rebuild animation in vanilla javaScript
  * 2) Rebuild with proper layout in Webflow
- * build: 02.03.2021 17:43 | anthonysalamin.ch
+ * V.01 | 02.03.2021 @ 17:43 | anthonysalamin.ch
  */
-console.log("loaded cookie agreement V.01");
 document.addEventListener("DOMContentLoaded", () => {
+  cookieAgreement();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.01 | 02.03.2021 @ 17:43 | cookie agreement`
+  ); // end logging
+}); // end DOM listener
+
+function cookieAgreement() {
   // options
-  const cookieName = "NOEMA_Cookie_Agreement",
-    cookieValue = "Accepted",
+  const cookieName = "NOEMA_COOKIE_AGREEMENT",
+    cookieValue = "ACCEPTED",
     // cookieDomain = "scorpiosmykonos.com",
     popupDelay = 1, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
@@ -21,12 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no GDPR 🍪 was found");
+    console.log(`%c warning:`, `color: orange`, `no agreement 🍪 was found`); // end logging
     // display popup after x amount of seconds
     setTimeout(() => {
       gdprWrapper.style.display = "flex";
       $(gdprWrapper).fadeTo(speed, 1, "linear");
-      log("GDPR 🍪 popup displayed");
+      console.log(
+        `%c success:`,
+        `color: green`,
+        `agreement 🍪 popup displayed`
+      ); // end logging
     }, popupDelay * 1500);
 
     // close popup on click
@@ -44,15 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🧠 create cookie on button click to expire on newly defined date
 
     popupButton.addEventListener("click", () => {
-      log("GDPR 🍪 created and stored");
+      console.log(
+        `%c success:`,
+        `color: green`,
+        `agreement 🍪 created and stored`
+      ); // end logging
       Cookies.set(cookieName, cookieValue, {
         expires: date
         // domain: cookieDomain // ⚠️ activate domain for production
       }); // end set cookie
     }); // end listener
   } else {
-    log(
-      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
-    );
+    console.log(
+      `%c success:`,
+      `color: green`,
+      `${cookieName} 🍪 is "${cookieValue}", popup remains hidden`
+    ); // end logging
   } // end if
-}); // end DOMloaded
+} // end cookieAgreement()

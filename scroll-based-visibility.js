@@ -1,9 +1,17 @@
 /*
- * 🟢 NOEMA | scroll based visibility V.02
- * build: 04.03.2021 13:57 | anthonysalamin.ch
+ * 🟢 NOEMA | scroll based visibility
+ * V.02 | 04.03.2021 13:57 | anthonysalamin.ch
  */
-console.log("loaded scroll based visibility V.02");
 document.addEventListener("DOMContentLoaded", () => {
+  scrollBasedVisibility();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.02 | 04.03.2021 13:57 | scroll based visibility`
+  ); // end logging
+}); // end DOM listener
+
+function scrollBasedVisibility() {
   // listening to scroll
   document.addEventListener("scroll", () => {
     // globals
@@ -40,4 +48,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // animation
     logo.style.opacity = isAboveTrigger ? "1" : "0";
   }); // end scroll event
-}); // end DOM loaded
+} // end scrollBasedVisibility()

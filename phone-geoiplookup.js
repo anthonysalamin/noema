@@ -1,14 +1,17 @@
 /*
- * NOEMA | 🟢 phone geoIpLookup V.6
- * build 16.03.2021 12:44 | anthonysalamin.ch
+ * NOEMA | 🟢 phone geoIpLookup
+ * V.6 | 16.03.2021 @ 12:44 | anthonysalamin.ch
  */
-console.log("loaded phone geoIpLookup V.6");
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
-});
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `V.6 | 16.03.2021 @ 12:44 | phone geoIpLookup`
+  ); // end logging
+}); // end DOM loaded
 
 function girlGimmeYourNumber() {
-  "use strict";
   // globals
   const log = console.log,
     forms = document.getElementsByClassName("form-wrapper-rsrv"),
@@ -84,18 +87,22 @@ function girlGimmeYourNumber() {
 
       // 🧠 check if number is valid
       if (validity == true) {
-        log(`🍀 Yay, your number ${number} seems legit`);
+        console.log(
+          `%c success:`,
+          `color: green`,
+          `your number ${number} seems legit`
+        ); // end logging
         // input.value = number; // inject full number with national code
         info.innerHTML = ""; // "seems legit"
         info.style.color = colorValid;
 
         // 🧠 else if number is not valid
       } else {
-        log(
-          `😡 Oops, your number ${number} seems ${
-            validity ? "legit" : "invalid"
-          }, please try again.`
-        );
+        console.log(
+          `%c error:`,
+          `color: red`,
+          `your number ${number} seems invalid please try again.`
+        ); // end logging
 
         // edge cases if number invalid
         let numberLength = number.length;
@@ -113,14 +120,22 @@ function girlGimmeYourNumber() {
             info.innerHTML = `Almost valid.`;
           } else {
             // error handling
-            log("not enough info to perform further validation check");
+            console.log(
+              `%c error:`,
+              `color: red`,
+              `not enough info to perform further validation check`
+            ); // end logging
           }
           // 🧠 country code is not set tell the user
         } else if (numberLength > 0 && !plusCharacter) {
           info.innerHTML = `Please enter country code first`;
         } else {
           // error handling
-          log("something went wrong with initial country code validation");
+          console.log(
+            `%c error:`,
+            `color: red`,
+            `something went wrong with initial country code validation`
+          ); // end logging
         } // end if country code check
 
         info.style.color = colorInvalid;
