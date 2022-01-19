@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function datePicker() {
   // options
   const seasonHasAnEnd = true,
-    seasonStart = { day: 21, month: 5, year: new Date().getFullYear() },
+    seasonStart = { day: 28, month: 4, year: new Date().getFullYear() },
     seasonEnd = { day: 10, month: 10, year: new Date().getFullYear() },
     daysLimit = 30;
 
