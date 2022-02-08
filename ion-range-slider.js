@@ -60,7 +60,7 @@ function ionRangeSlider() {
       "12:15pm",
       "12:30pm",
       "12:45pm",
-      "13:00pm"
+      "01:00pm"
     ],
     from: 4,
     force_edges: true,
