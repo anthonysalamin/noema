@@ -1,7 +1,7 @@
 /*
  * 🟡 NOEMA | date picker
  * dependencies: mobiscroll.js + moment.js
- * V.12 | 28.10.2021 @ 23:13 | anthonysalamin.ch
+ * V.12 | 08.02.2022 @ 10:23 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   datePicker();
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function datePicker() {
   // options
   const seasonHasAnEnd = true,
-    seasonStart = { day: 28, month: 4, year: 2022 },
+    seasonStart = { day: 6, month: 5, year: 2022 },
     seasonEnd = { day: 10, month: 10, year: 2022 },
     daysLimit = 30;
 

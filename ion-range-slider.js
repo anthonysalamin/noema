@@ -1,6 +1,6 @@
 /*
  * 🟢 NOEMA | ion range slider
- * V.01 | 16.03.2021 @ 19:44 | anthonysalamin.ch
+ * V.01 | 08.02.2022 @ 10:26 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   ionRangeSlider();
@@ -56,7 +56,11 @@ function ionRangeSlider() {
       "11:15pm",
       "11:30pm",
       "11:45pm",
-      "12:00pm"
+      "12:00pm",
+      "12:15pm",
+      "12:30pm",
+      "12:45pm",
+      "13:00pm"
     ],
     from: 4,
     force_edges: true,
