@@ -1,7 +1,7 @@
 /*
  * 🟢 NOEMA | button reserve handling
  * Behaviour: on click change text content + bg color based on device's width
- * V.01 | 15.03.2021 @ 11:08 | anthonysalamin.ch
+ * V.01 | 29.03.2022 @ 13:22 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   buttonHandling();
@@ -20,6 +20,8 @@ function buttonHandling() {
   let textContent = "RESERVE",
     width,
     desktopDevice;
+  
+  if (btnReserve == null) return; // sevenrooms custom id button used instead
 
   // 🍐 check device's size on window resize
   function deviceSize() {
