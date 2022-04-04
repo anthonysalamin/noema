@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cookieAnnouncement() {
   // options
-  const cookieName = "NOEMA_Cookie_Announcement",
+  const cookieName = "NOEMA_Cookie_Announcement_04_04_2022",
     cookieValue = "Announced",
     // cookieDomain = "scorpiosmykonos.com",
     popupDelay = 1, // delay in seconds after which the popup appears
