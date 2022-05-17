@@ -1,13 +1,13 @@
 /*
  * 🟢 NOEMA | cookie announcement
- * V.01 | 30.04.2021 @ 08:07 | anthonysalamin.ch
+ * V.01 | 17.05.22 @ 10:23
  */
 document.addEventListener("DOMContentLoaded", () => {
-  cookieAnnouncement();
+  // cookieAnnouncement(); // ⚠️ remove comment to run script / handle popup display
   console.log(
     `%c loaded:`,
     `color: green`,
-    `V.01 | 30.04.2021 @ 08:07 | cookie announcement`
+    `V.01 | 17.05.22 @ 10:23 | cookie announcement`
   ); // end logging
 }); // end DOM listener
 
