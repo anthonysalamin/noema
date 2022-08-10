@@ -47,7 +47,7 @@ function buttonHandling() {
     if (textContent == "RESERVE") {
       btnReserve.textContent = "CLOSE";
       btnReserve.style.backgroundColor = desktopDevice
-        ? "#eeeadf"
+        ? "#f6f5f0" // was #eeeadf
         : "transparent";
     } else if (textContent == "CLOSE") {
       btnReserve.textContent = "RESERVE";
