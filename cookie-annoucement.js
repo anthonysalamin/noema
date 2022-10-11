@@ -3,13 +3,13 @@
  * V.01 | 17.05.22 @ 10:23
  */
 document.addEventListener("DOMContentLoaded", () => {
-  // cookieAnnouncement(); // ⚠️ remove comment to run script / handle popup display
+  cookieAnnouncement();
   console.log(
     `%c loaded:`,
     `color: green`,
     `V.01 | 17.05.22 @ 10:23 | cookie announcement`
   ); // end logging
-}); // end DOM listener
+});
 
 function cookieAnnouncement() {
   // options
